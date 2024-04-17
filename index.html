@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Trivia Game</title> 
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Option 1: Include in HTML -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <script src="he.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        
+    </head>
+    <body>
+        <main>
+            <!-- Part 1: Fetching local JSON Data-->
+            <h1 class="center">Trivia Game</h1>
+            <h6 class="center">Using Open <a href="https://opentdb.com/api_config.php">Trivia Database</a></h6>
+           <section id="choosingQuestionsSection" class="simple-border">
+                <h2>Choose the Category</h2>
+                <select id="categorySelect" class="my-1">
+                    <option value="9">General Knowledge</option>
+                    <option value="10">Books</option>
+                    <option value="11">Film</option>
+                    <option value="21">Sports</option>
+                    <!-- TODO X: Add more categories here -->
+                </select>
+                <br/>
+                <label for="numberOfQuestions"> Choose the number of Questions</label>
+                <input type="number" id="numberOfQuestions" name="numQuestions" min="2" max="10" value="4" step="2">
+                <br/>
+                <button class="btn btn-success my-1" id="getQuestions">Get Questions</button>
+            </section>
+            <section id="resultsSection" class="d-none simple-border">
+                <h2>Results</h2>
+                <p>Score: <span id="score">0</span> out of <span id="totalQuestions">10</span> total questions</p>
+                <p>Questions Answered so far: <span id="questionsAnswered">0</span></p>
+                <button class="btn btn-danger" id="restartBtn">Restart</button>
+           </section>
+            <section id="questionsSection" class="d-none simple-border">
+                <h2>Questions</h2>
+                <select id="difficultyFilter" class="py-1 my-1">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <br/>
+                <select id="typeFilter" class="py-1 my-1">
+                    <option value="someValueShouldGoHere--CheckTheAPI">True/False Questions</option>
+                    <option value="someValueShouldGoHere--CheckTheAPI">Multiple Choice Questions</option>
+                </select>
+                <div id="questionCards">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Sample Question</h5>
+                            <h6 class="card-subtitle">Category: General Knowledge</h6>
+                        </div>
+                        <form>
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input type="radio" id="answer1" name="answer" value="1">
+                                    <label class="form-check-label" for="answer1">Answer 1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="answer2" name="answer" value="2">
+                                    <label class="form-check-label" for="answer2">Answer 2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="answer3" name="answer" value="3">
+                                    <label class="form-check-label" for="answer2">Answer 3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="answer4" name="answer" value="4">
+                                    <label class="form-check-label" for="answer2">Answer 4</label>
+                                </div>         
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-success">Check Answer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+       
+    </body>
+</html>
