@@ -327,7 +327,7 @@ function createQuestionCard(question){
  */
 async function getQuestions(){
     console.log("Fetching questions from the API");
-    const baseURL = 'https://opentdb.com/api.php?amount=4&category=11';
+    const baseURL = 'https://opentdb.com/api.php?amount=1';
     
     //Step 1: get the user input (number of questions to get)
     //get the number of questions to fetch from the user input
