@@ -179,7 +179,7 @@ function updateScoreDisplay(){
 function displayQuestions(questions){
     let questionsContainer = document.querySelector('#questionCards');
     //clear the questions container
-    ////Step 4C : Uncomment to clear the questions container
+    ////Step 3C : Uncomment to clear the questions container
     // clearContainer(questionsContainer);
 
     //create a card for a single question for testing
@@ -188,7 +188,7 @@ function displayQuestions(questions){
     //append the question card to the questionsContainer
     questionsContainer.appendChild(questionCard);
 
-    //Step 4C 
+    //Step 3C 
     //loop through the questions and create a question card for each
     //append each card to the questionsContainer
     
